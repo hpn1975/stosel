@@ -7,7 +7,6 @@
     "root": "src",
     "outDir": "dist",
     "assets": [
-      "assets",
       "favicon.ico"
     ],
     "index": "index.html",
@@ -29,11 +28,11 @@
       "assets/vendor/dzsparallaxer/dzsscroller/scroller.css",
       "assets/vendor/dzsparallaxer/advancedscroller/plugin.css",
       "assets/vendor/animate.css",
-      "assets/vendor/fancybox/jquery.fancybox.min.css",
-      "assets/vendor/slick-carousel/slick/slick.css",
-      "assets/vendor/typedjs/typed.css",
-      "assets/vendor/hs-megamenu/src/hs.megamenu.css",
       "assets/vendor/hamburgers/hamburgers.min.css",
+      "assets/vendor/hs-megamenu/src/hs.megamenu.css",
+      "assets/vendor/slick-carousel/slick/slick.css",
+      "assets/vendor/fancybox/jquery.fancybox.min.css",
+      "assets/vendor/typedjs/typed.css",
 
       "assets/css/unify-core.css",
       "assets/css/unify-components.css",
@@ -56,6 +55,10 @@
       "assets/vendor/fancybox/jquery.fancybox.min.js",
       "assets/vendor/typedjs/typed.min.js",
 
+      "assets/vendor/masonry/dist/masonry.pkgd.min.js",
+      "assets/vendor/imagesloaded/imagesloaded.pkgd.min.js",
+      "assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js",
+
       "assets/js/hs.core.js",
 
       "assets/js/components/hs.carousel.js",
@@ -65,6 +68,9 @@
       "assets/js/components/hs.popup.js",
       "assets/js/components/text-animation/hs.text-slideshow.js",
       "assets/js/components/hs.go-to.js",
+      "assets/js/components/hs.dropdown.js",
+      "assets/js/components/hs.scrollbar.js",
+
 
       "assets/js/custom.js"
     ],
