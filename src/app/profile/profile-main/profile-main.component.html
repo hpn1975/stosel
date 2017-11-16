@@ -1,0 +1,45 @@
+<form class="form" role="form" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+  <div class="form-group">
+    <label for="fname">First Name</label>
+    <input type="text" class="form-control" id="fname" formControlName="firstName">
+  </div>
+  <div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text" class="form-control" id="lname" formControlName="lastName">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" formControlName="age">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input type="text" class="form-control" id="company" formControlName="company">
+  </div>
+
+  <div class="form-group">
+    <label for="website">Website</label>
+    <input type="url" class="form-control" id="website" formControlName="website">
+  </div>
+
+  <div class="form-group">
+    <label for="userName">User Name</label>
+    <input type="text" class="form-control" id="userName" formControlName="userName">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" formControlName="password">
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<div>{{textform}}</div>
+
