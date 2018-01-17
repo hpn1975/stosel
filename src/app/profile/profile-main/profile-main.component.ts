@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { FetchDataService } from '../../services/fetch-data.service';
 
 
 @Component({
@@ -11,40 +9,10 @@ import { FetchDataService } from '../../services/fetch-data.service';
 })
 export class ProfileMainComponent implements OnInit {
 
-  profileForm: FormGroup;
-  textform: string="";
+  userLoggedIn: boolean = true;
 
-  constructor(private GetProfileData: FetchDataService,
-    private fb: FormBuilder) {
+  constructor() {}
 
-  }
-
-
-  ngOnInit() {
-    this.profileForm = this.fb.group({
-      'firstName': [null, Validators.required],
-      'lastName': [null, Validators.required],
-      'age': [''],
-      'email': [''],
-      'company': [''],
-      'website': [''],
-      'userName': [''],
-      'password': [''],
-      'confirmPassword': ['']
-    })
-  }
-
-  onSubmit(form: FormGroup) {
-    this.GetProfileData.postData('/api/profile', JSON.stringify(form.value), [])
-      .subscribe(res => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err.error);
-        console.log(err.name);
-        console.log(err.message);
-        console.log(err.status);
-      }
-      );
-  }
+  ngOnInit() {}
+  
 }

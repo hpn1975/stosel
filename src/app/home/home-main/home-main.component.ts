@@ -10,6 +10,11 @@ import { FetchDataService } from '../../services/fetch-data.service';
 export class HomeMainComponent implements OnInit {
 
   constructor(private fetchData: FetchDataService) { }
+
+  //Current Date
+  CurrDate = Date.now();
+
+
   objects: any[] = [];
   isDataLoaded: boolean = false;
 
