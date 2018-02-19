@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import {
+  Router,
   ActivatedRouteSnapshot,
-  CanActivate,
-  RouterStateSnapshot,
-  Router
+  CanActivateChild,
+  RouterStateSnapshot
 } from '@angular/router';
 import { LoginService } from './login.service';
 
 @Injectable()
-export class AuthGuardService implements CanActivate {
-
+export class NonAuthGuardService implements CanActivateChild {
   constructor(
     private us: LoginService,
     private router: Router
   ) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (!this.us.isAuth()) {
-      localStorage.setItem('error', 'You need to be logged in to access this page');
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.us.isAuth()) {
+      localStorage.setItem('error', 'You need to logout to access this page');
       this.router.navigate(['/']);
       return false;
     }

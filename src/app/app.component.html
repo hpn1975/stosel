@@ -1,176 +1,479 @@
-<!-- Header -->
-<header id="js-header" class="u-header u-header--static--lg u-header--show-hide--lg u-header--change-appearance--lg" data-header-fix-moment="300">
+<mat-toolbar color="primary">
+  <button mat-button
+          class="app-menu-button"
+          (click)="sidenav.toggle()">
+    <i class="material-icons">menu</i>
+  </button>
+  <span class="title">Angular Material Demo</span>
+</mat-toolbar>
 
-  <!-- Top Bar -->
-  <div class="u-header__section u-header__section--hidden u-header__section--dark g-bg-black g-py-13">
-    <div class="container">
-      <div class="row flex-column flex-md-row align-items-center justify-content-between text-uppercase g-color-white g-font-size-11 g-mx-minus-15">
-        <!-- Responsive Toggle Button -->
-        <button class="g-hidden-md-up d-block btn btn-xs u-btn-primary g-brd-none g-line-height-1 mx-auto" type="button" aria-controls="dropdown-megamenu"
-          aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#dropdown-megamenu">
-          <span class="hamburger hamburger--slider">
-            <span class="hamburger-box">
-              <span class="hamburger-inner g-bg-white"></span>
-            </span>
-          </span>
+<mat-sidenav-container [class.m2app-dark]="isDarkTheme">
+  <mat-sidenav #sidenav
+               mode="side"
+               class="app-sidenav"
+               color="primary">
+  <mat-toolbar>
+      <mat-toolbar-row>
+        <span>Settings</span>
+        <span class="app-toolbar-filler"></span>
+        <mat-icon class="example-icon">build</mat-icon>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <button mat-button
+                (click)="isDarkTheme = !isDarkTheme"
+                class="app-sidebar-button">TOGGLE THEME</button>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <span>Account</span>
+        <span class="app-toolbar-filler"></span>
+        <mat-icon class="example-icon">account_circle</mat-icon>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <button mat-raised-button
+                color="accent"
+                class="app-sidebar-button">
+          <mat-icon class="example-icon">verified_user</mat-icon>
+          Login
         </button>
-        <!-- End Responsive Toggle Button -->
+      </mat-toolbar-row>
 
-        <div class="col-auto g-px-15 w-100 g-width-auto--md">
-          <ul id="dropdown-megamenu" class="d-md-block collapse list-inline g-line-height-1 g-mx-minus-4 mb-0">
-            <li class="d-block d-md-inline-block g-mx-4">
-              <time datetime="CurrDate">{{CurrDate|date:'fullDate'}}</time>
-            </li>
-            <li class="d-block g-hidden-md-down d-md-inline-block g-mx-4">|</li>
-            <li class="d-block d-md-inline-block g-mx-4">
-              <a href="#!" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Contact</a>
-            </li>
-            <li class="d-block g-hidden-md-down d-md-inline-block g-mx-4">|</li>
-            <li class="d-block d-md-inline-block g-mx-4">
-              <a href="#!" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Forums</a>
-            </li>
-            <li class="d-block g-hidden-md-down d-md-inline-block g-mx-4">|</li>
-            <li class="hs-has-sub-menu d-block d-md-inline-block g-pos-rel g-mx-4">
-              <a href="#!" id="dropdown-invoker-3" class="g-color-white g-color-primary--hover g-text-underline--none--hover" aria-haspopup="true"
-                aria-expanded="false" aria-controls="dropdown-3">Dropdown
-              </a>
-              <ul id="dropdown-3" class="hs-sub-menu list-unstyled g-bg-gray-dark-v1 g-py-10 g-px-20 g-mt-13" aria-labelledby="dropdown-invoker-3">
-                <li class="g-py-10">
-                  <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                </li>
-                <li class="g-py-10">
-                  <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                </li>
-                <li class="hs-has-sub-menu g-py-10">
-                  <a href="#!" id="dropdown-invoker-4" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="dropdown-4">Dropdown Item
-                  </a>
-                  <ul id="dropdown-4" class="hs-sub-menu list-unstyled g-bg-gray-dark-v1 g-py-10 g-px-20" aria-labelledby="dropdown-invoker-4">
-                    <li class="g-py-10">
-                      <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                    </li>
-                    <li class="g-py-10">
-                      <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                    </li>
-                    <li class="hs-has-sub-menu g-py-10">
-                      <a href="#!" id="dropdown-invoker-5" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover" aria-haspopup="true"
-                        aria-expanded="false" aria-controls="dropdown-5">Dropdown Item
-                      </a>
-                      <ul id="dropdown-5" class="hs-sub-menu list-unstyled g-bg-gray-dark-v1 g-py-10 g-px-20" aria-labelledby="dropdown-invoker-5">
-                        <li class="g-py-10">
-                          <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                        </li>
-                        <li class="g-py-10">
-                          <a href="#!" class="d-block g-text-underline--none--hover g-color-white g-color-primary--hover">Dropdown Item</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <mat-toolbar-row>
+        <span>Favorites</span>
+        <span class="app-toolbar-filler"></span>
+        <mat-icon class="example-icon">favorite</mat-icon>
+      </mat-toolbar-row>
 
-        <div class="col-auto g-px-15">
-          <ul class="list-inline g-line-height-1 g-mt-minus-10 g-mx-minus-4 mb-0">
-            <li class="list-inline-item g-mx-4 g-mt-10">
-              <a href="#!" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Login</a>
-            </li>
-            <li class="list-inline-item g-mx-4 g-mt-10">|</li>
-            <li class="list-inline-item g-mx-4 g-mt-10">
-              <a href="#!" class="g-color-white g-color-primary--hover g-text-underline--none--hover">Register</a>
-            </li>
-            <li class="list-inline-item g-mx-4 g-mt-10">
-              <!-- Search -->
-              <div class="g-pos-rel">
-                <a href="#!" class="g-font-size-14 g-color-white g-color-primary--hover g-ml-5" aria-haspopup="true" aria-expanded="false"
-                  aria-controls="searchform-6" data-dropdown-target="#searchform-6" data-dropdown-type="css-animation" data-dropdown-duration="300"
-                  data-dropdown-animation-in="fadeInUp" data-dropdown-animation-out="fadeOutDown">
-                  <i class="fa fa-search"></i>
-                </a>
-
-                <!-- Search Form -->
-                <form id="searchform-6" class="u-searchform-v1 g-bg-black g-box-shadow-none g-pa-10 g-mt-10">
-                  <div class="input-group g-brd-primary--focus">
-                    <input class="form-control rounded-0 u-form-control g-brd-white" type="search" placeholder="Enter Your Search Here...">
-                    <div class="input-group-addon p-0">
-                      <button class="btn rounded-0 btn-primary btn-md g-font-size-14 g-px-18" type="submit">Go</button>
-                    </div>
-                  </div>
-                </form>
-                <!-- End Search Form -->
-              </div>
-              <!-- End Search -->
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Top Bar -->
-
-
-  <div class="u-header__section u-header__section--dark g-bg-black-opacity-0_4 g-transition-0_3 g-py-10" data-header-fix-moment-exclude="g-bg-black-opacity-0_4 g-py-10"
-    data-header-fix-moment-classes="g-bg-black-opacity-0_7 g-py-0">
-    <nav class="js-mega-menu navbar navbar-expand-lg">
-      <div class="container">
-        <!-- Responsive Toggle Button -->
-        <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button"
-          aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-          <span class="hamburger hamburger--slider">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </span>
+      <mat-toolbar-row>
+        <button mat-raised-button
+                color="warn"
+                class="app-sidebar-button">
+          <mat-icon class="example-icon">delete</mat-icon>
+          Delete
         </button>
-        <!-- End Responsive Toggle Button -->
+      </mat-toolbar-row>
 
-        <!-- Logo -->
-        <a href="../../../index.html" class="navbar-brand">
-          <img src="../../../static/img/logo.png" alt="Image Description">
-        </a>
-        <!-- End Logo -->
+    </mat-toolbar>
+  </mat-sidenav>
 
-        <!-- Navigation -->
-        <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
-          <ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-main-nav-v2 u-sub-menu-v2">
-            <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-              <a [routerLink]="['/home']" class="nav-link">Home
-              </a>
-            </li>
-            <li class="nav-item hs-has-sub-menu g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-              <a [routerLink]="['/profile']" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">Profile
-              </a>
-            </li>
-            <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-              <a href="#!" class="nav-link">Builder
+  
 
-              </a>
-            </li>
-            <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg active">
-              <a href="#!" class="nav-link">User
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-              <a href="#!" class="nav-link">Demos
+  <div class="app-content">
 
-              </a>
-            </li>
-            <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-              <a href="#!" class="nav-link">What's New
+    <!-- Material Button -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Button</h2>
+        <button class="app-button"
+                mat-button>FLAT</button>
+        <button class="app-button"
+                mat-raised-button
+                mat-tooltip="This is a tooltip!">RAISED</button>
+        <button class="app-button"
+                mat-raised-button
+                color="primary">PRIMARY RAISED</button>
+        <button class="app-button"
+                mat-raised-button
+                color="accent">ACCENT RAISED</button>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Button -->
 
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!-- End Navigation -->
-      </div>
-    </nav>
+    <!-- Material Chip List -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Chips</h2>
+        <mat-chip-list>
+          <mat-chip *ngFor="let chipColor of availableColors"
+                    selected="true"
+                    color="{{chipColor.color}}">
+            {{chipColor.name}}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Chip List -->
 
+    <!-- Material Checkbox -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Checkbox</h2>
+        <mat-checkbox color="warn">Unchecked</mat-checkbox>
+        <mat-checkbox [checked]="true">Checked</mat-checkbox>
+        <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+        <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Checkbox -->
+
+    <!-- Material Radio Button -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Radio Button</h2>
+        <mat-radio-button name="symbol">Alpha</mat-radio-button>
+        <mat-radio-button name="symbol">Beta</mat-radio-button>
+        <mat-radio-button name="symbol"
+                          disabled>Disabled</mat-radio-button>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Radio Button -->
+
+    <!-- Material Input -->
+    <mat-card class="app-input-section">
+      <mat-card-content>
+        <h2 class="example-h2">Material Input</h2>
+        <mat-form-field>
+          <input matInput
+                 placeholder="First name" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput
+                 #nickname
+                 placeholder="Nickname"
+                 maxlength="50" />
+          <mat-hint align="end">
+            {{nickname.value.length}} / 50
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-icon matPrefix
+                    class="app-input-icon">android</mat-icon>
+          <input matInput
+                 placeholder="Favorite phone">
+        </mat-form-field>
+        <mat-form-field>
+
+          <mat-icon matPrefix
+                    class="app-input-icon">motorcycle</mat-icon>
+          <input matInput
+                 placeholder="Motorcycle model">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Input -->
+
+    <!-- Material Select -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Select</h2>
+        <mat-form-field>
+          <mat-select placeholder="Favorite game"
+                      [(ngModel)]="selectedValue"
+                      name="game">
+            <mat-option *ngFor="let game of games"
+                        [value]="game.value">
+              {{game.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p> Selected value: {{selectedValue}} </p>
+
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Select -->
+
+    <!-- Material List -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material List</h2>
+        <mat-list class="app-list">
+          <mat-list-item *ngFor="let food of foods">
+            <h3 mat-line>{{food.name}}</h3>
+            <p mat-line
+               class="demo-secondary-text">{{food.rating}}</p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material List -->
+
+    <!-- Material Grid List -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Grid List</h2>
+        <mat-grid-list cols="4"
+                       rowHeight="100px">
+          <mat-grid-tile class="grid-test-1"
+                         *ngFor="let tile of tiles"
+                         [colspan]="tile.cols"
+                         [rowspan]="tile.rows"
+                         [style.background]="tile.color">
+            {{tile.text}}
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Grid List -->
+
+    <!-- Material Spinner -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Progress spinner configuration</h2>
+
+        <section class="example-section">
+          <label class="example-margin">Color:</label>
+          <mat-radio-group [(ngModel)]="color">
+            <mat-radio-button class="example-margin"
+                              value="primary">
+              Primary
+            </mat-radio-button>
+            <mat-radio-button class="example-margin"
+                              value="accent">
+              Accent
+            </mat-radio-button>
+            <mat-radio-button class="example-margin"
+                              value="warn">
+              Warn
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section class="example-section">
+          <label class="example-margin">Mode:</label>
+          <mat-radio-group [(ngModel)]="mode">
+            <mat-radio-button class="example-margin"
+                              value="determinate">
+              Determinate
+            </mat-radio-button>
+            <mat-radio-button class="example-margin"
+                              value="indeterminate">
+              Indeterminate
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <section class="example-section"
+                 *ngIf="mode === 'determinate'">
+          <label class="example-margin">Progress:</label>
+          <mat-slider class="example-margin"
+                      [(ngModel)]="value"></mat-slider>
+        </section>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Result</h2>
+
+        <mat-progress-spinner class="example-margin"
+                              [color]="color"
+                              [mode]="mode"
+                              [value]="value">
+        </mat-progress-spinner>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Spinner -->
+
+    <!-- Material Progress Bar -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Progress Bar</h2>
+        <label>
+          Indeterminate progress-bar
+          <mat-progress-bar class="app-progress"
+                            mode="indeterminate"
+                            aria-label="Indeterminate progress-bar example"></mat-progress-bar>
+        </label>
+        <label>
+          Determinate progress bar - {{progress}}%
+          <mat-progress-bar class="app-progress"
+                            color="accent"
+                            mode="determinate"
+                            [value]="progress"
+                            aria-label="Determinate progress-bar example"></mat-progress-bar>
+        </label>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Progress Bar -->
+
+    <!-- Material Tab -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Tab</h2>
+        <mat-tab-group>
+          <mat-tab label="Air Nomads">
+            <p>The Air Nomads were a civilization composed of people who practiced the art of airbending. While nomadic, Air
+              Nomads did inhabit four major air temples, each built on remote locations, only easily reachable with flying
+              bison. The Air Nomads were a highly spiritual group of people.</p>
+          </mat-tab>
+          <mat-tab label="Water Tribe">
+            <p>The Water Tribe is a collective term for people, some of whom practice the art of waterbending, who follow a
+              government system in the form of a tribal chiefdom. Although members of the Water Tribe typically inhabit the
+              polar regions, the North Pole and the South Pole, there is a small population of waterbenders who inhabit the
+              Foggy Swamp in Earth Kingdom territory. The two main tribes are the Northern Water Tribe at the North Pole
+              and the Southern Water Tribe at the South Pole.</p>
+          </mat-tab>
+          <mat-tab label="Earth Kingdom">
+            <p>The Earth Kingdom is a massive continent led by an earth monarch and is home to people who practice the art of
+              earthbending. Being the largest of the four nations, it is ethnically diverse with a variance of customs and
+              cultural traditions. The people of the Earth Kingdom are strong and persistent. The geography of the Earth
+              Kingdom varies tremendously, ranging from wooded forests to blazing deserts, mountainous terrain, and grassy
+              plains.
+            </p>
+          </mat-tab>
+          <mat-tab label="Fire Nation">
+            <p>The Fire Nation is home to people who practice the art of firebending and is an absolute monarchy led by the
+              Fire Lord. Being composed of several major islands and located on the equator, the nation is considered to
+              be an archipelago. Its economy is the largest and most powerful in the world with a strong industrial sector
+              and advanced technological developments. The climate is normally humid and warm which allows for a diversity
+              of flora and fauna to thrive.</p>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Tab -->
+
+    <mat-card>
+      <mat-icon>build</mat-icon>
+      <mat-icon>android</mat-icon>
+    </mat-card>
+
+    <!-- Material Slider -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Slider :: Configuration</h2>
+
+        <section class="example-section">
+          <mat-input-container class="example-margin">
+            <input matInput
+                   type="number"
+                   placeholder="Value"
+                   [(ngModel)]="slider.value">
+          </mat-input-container>
+          <mat-input-container class="example-margin">
+            <input matInput
+                   type="number"
+                   placeholder="Min value"
+                   [(ngModel)]="slider.min">
+          </mat-input-container>
+          <mat-input-container class="example-margin">
+            <input matInput
+                   type="number"
+                   placeholder="Max value"
+                   [(ngModel)]="slider.max">
+          </mat-input-container>
+          <mat-input-container class="example-margin">
+            <input matInput
+                   type="number"
+                   placeholder="Step size"
+                   [(ngModel)]="slider.step">
+          </mat-input-container>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.showTicks">Show ticks</mat-checkbox>
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.autoTicks"
+                        *ngIf="slider.showTicks">
+            Auto ticks
+          </mat-checkbox>
+          <mat-input-container class="example-margin"
+                               *ngIf="slider.showTicks && !slider.autoTicks">
+            <input matInput
+                   type="number"
+                   placeholder="Tick interval"
+                   [(ngModel)]="slider.tickInterval">
+          </mat-input-container>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.thumbLabel">Show thumb label</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.checked">Checked</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.vertical">Vertical</mat-checkbox>
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.invert">Inverted</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+          <mat-checkbox class="example-margin"
+                        [(ngModel)]="slider.disabled">Disabled</mat-checkbox>
+        </section>
+      </mat-card-content>
+
+      <mat-card-content>
+        <h2 class="example-h2">Slider Result</h2>
+        <mat-slider class="example-margin"
+                    [disabled]="slider.disabled"
+                    [invert]="slider.invert"
+                    [max]="slider.max"
+                    [min]="slider.min"
+                    [step]="slider.step"
+                    [thumb-label]="slider.thumbLabel"
+                    [tick-interval]="slider.tickInterval"
+                    [value]="slider.value"
+                    [vertical]="slider.vertical">
+        </mat-slider>
+      </mat-card-content>
+
+      <mat-card-content>
+        <h2 class="example-h2">Slider Toggle Result</h2>
+        <mat-slide-toggle [disabled]="slider.disabled"
+                          [checked]="slider.checked"
+                          (change)="slider.checked = !slider.checked">Slide me!</mat-slide-toggle>
+      </mat-card-content>
+
+    </mat-card>
+    <!-- /Material Slider -->
+
+    <!-- Material Menu -->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Menu</h2>
+        <button mat-icon-button
+                [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item
+                  disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voicemail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Menu-->
+
+    <!-- Material Dialog-->
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Material Dialog</h2>
+        <p>Last dialog result: {{lastDialogResult}}</p>
+        <button mat-raised-button
+                (click)="openDialog()">DIALOG</button>
+        <button mat-raised-button
+                (click)="showSnackbar()">SNACKBAR</button>
+      </mat-card-content>
+    </mat-card>
+    <!-- /Material Dialog-->
+    <!-- Material Fab-->
+    <button mat-fab
+            class="app-fab">
+      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+    </button>
+    <!-- /Material Fab-->
   </div>
-</header>
-<!-- End Header -->
+</mat-sidenav-container>
+
+
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet></router-outlet>

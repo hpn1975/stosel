@@ -10,10 +10,9 @@
         <!-- Form -->
         <form class="g-py-15" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-
           <div class="g-mb-20">
             <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text"
-              placeholder="Email address" formControlName="email">
+              placeholder="Username" formControlName="username">
           </div>
 
           <div class="g-mb-20">
@@ -76,6 +75,10 @@
             <div class="col g-mb-20">
               <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text"
                 placeholder="Year" formControlName="DOByear">
+            </div>
+            <div class="g-mb-20">
+              <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 rounded g-py-15 g-px-15" type="text"
+                placeholder="Email address" formControlName="email">
             </div>
           </div>
 

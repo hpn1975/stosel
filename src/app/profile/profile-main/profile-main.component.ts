@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ProfileMainComponent implements OnInit {
 
-  userLoggedIn: boolean = true;
+  userLoggedIn: boolean = false;
 
   constructor() {}
 

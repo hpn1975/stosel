@@ -1,7 +1,8 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, Form } from '@angular/forms';
-import { FetchDataService } from '../../services/fetch-data.service';
-import { PasswordValidation } from '../../services/password.validator';
+import { LoginService, PasswordValidation } from '../../services';
+
 
 @Component({
   selector: 'app-profile-register',
@@ -12,13 +13,17 @@ import { PasswordValidation } from '../../services/password.validator';
 export class ProfileRegisterComponent implements OnInit {
 
   profileForm: FormGroup;
+  formError: boolean = false;
+  formLoading: boolean = false;
 
-  constructor(private GetProfileData: FetchDataService,
-    private fb: FormBuilder) { }
+  constructor(private login: LoginService,
+    private fb: FormBuilder,
+    private router: Router) { }
 
   ngOnInit() {
     this.profileForm = this.fb.group({
-      'email': [null, Validators.required],
+
+      'username': [''],
       'password': [''],
       'confirmPassword': [''],
       'firstName': [null, Validators.required],
@@ -27,24 +32,27 @@ export class ProfileRegisterComponent implements OnInit {
       'DOBmonth': [''],
       'DOBday': [''],
       'DOByear': [''],
+      'email': [null, Validators.required],
       'termsNconditions': [''],
       'subscription': ['']
     }, {
-        validator: PasswordValidation.MatchPassword  
-    })
+        validator: PasswordValidation.MatchPassword
+      })
   }
 
   onSubmit() {
-    this.GetProfileData.postData('/api/profile/register', JSON.stringify(this.profileForm.value), [])
-      .subscribe(res => {
-        console.log(res);
-      },
-      (err) => {
-        console.log(err.error);
-        console.log(err.name);
-        console.log(err.message);
-        console.log(err.status);
-      }
+    this.formLoading = true;
+    this.login.register(this.profileForm.value)
+      .first()
+      .finally(() => this.formLoading = false)
+      .subscribe(
+        res => {
+          this.login.setUserData();
+          this.router.navigate(['/']);
+        },
+        err => {
+          this.formError = true;
+        }
       );
   }
 }
